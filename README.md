@@ -1,2 +1,3 @@
 # js-blackjack
-Así dejamos el código en la sección 6
+Juego educativo aplicando las bases de Javascript
+Mejoras aplicando el patron de modulos 

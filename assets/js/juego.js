@@ -1,5 +1,6 @@
 const miModulo = (() => {
     'use strict';
+    //Ayuda para el programador
 
     let deck         = [];
     const tipos      = ['C','D','H','S'],
@@ -59,6 +60,8 @@ const miModulo = (() => {
         return deck.pop();
     }
 
+
+    //Extraemos el valor de las cartas A J K Q
     const valorCarta = ( carta ) => {
         const valor = carta.substring(0, carta.length - 1);
         return ( isNaN( valor ) ) ? 
@@ -118,8 +121,10 @@ const miModulo = (() => {
 
 
     // Eventos
-    btnPedir.addEventListener('click', () => {
 
+    //Este evento pide una carta
+    btnPedir.addEventListener('click', () => {
+        
         const carta = pedirCarta();
         const puntosJugador = acumularPuntos( carta, 0 );
         
@@ -141,7 +146,7 @@ const miModulo = (() => {
 
     });
 
-
+    //Este evento cambia al turno de la computadora 
     btnDetener.addEventListener('click', () => {
         btnPedir.disabled   = true;
         btnDetener.disabled = true;
@@ -149,13 +154,7 @@ const miModulo = (() => {
         turnoComputadora( puntosJugadores[0] );
     });
 
-    // btnNuevo.addEventListener('click', () => {
-        
-    //     inicializarJuego();
-
-    // });
-
-
+    //El modulo retorna la funcion para ser invocada fuera de si mismo
     return {
         nuevoJuego: inicializarJuego
     };
